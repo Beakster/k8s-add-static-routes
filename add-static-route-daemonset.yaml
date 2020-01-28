@@ -1,9 +1,12 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: add-static-route
   namespace: default
 spec:
+  selector:
+    matchLabels:
+      name: add-static-route
   template:
     metadata:
       name: add-static-route
